@@ -8,3 +8,46 @@ body,
 html {
     height: 100%;
 }
+
+ul {
+    list-style-type: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 98%;
+    max-width: 1280px;
+    padding: 5px 1%;
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #1c1e21ec;
+}
+
+header ul li {
+    display: inline-block;
+    padding: 3px 18px;
+    cursor: pointer;
+    border-radius: 12px;
+}
+
+header .areas ul li:hover {
+    background-color: #555454;
+}
+
+.logoInput input {
+    margin-left: 8px;
+    height: 45px;
+    position: relative;
+    top: -15px;
+    border-radius: 45px;
+    width: 218px;
+    background-color: rgb(65, 65, 65);
+    color: gray;
+    border: 0;
+    padding: 0 0 0 13px;
+}
