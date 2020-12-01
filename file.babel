@@ -1,0 +1,12 @@
+      var container = document.getElementById('main');
+      class Box extends React.Component {
+          render() {
+              return <div > < h1 > eae < /h1> </div >
+          }
+      }
+      class Formulario extends React.Component {
+              render() {
+                  return ( < form > < input type = "text" / > < input type = "submit" / > < /form>)
+                  }
+              }
+              ReactDOM.render( < div class = "umaclasse" > < Formulario / > < Box / > < Box / > < Box / > < /div>, container)
