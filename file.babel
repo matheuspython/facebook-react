@@ -1,12 +1,75 @@
-      var container = document.getElementById('main');
-      class Box extends React.Component {
-          render() {
-              return <div > < h1 > eae < /h1> </div >
-          }
+  var header = document.getElementById('header')
+  var grupos = document.getElementById('grupos')
+  var contatos = document.getElementById('contatos')
+  var stories = document.getElementById('stories')
+  var estoupensando = document.getElementById('estoupensando')
+  var salas = document.getElementById('salas')
+  var talvezConheeco = document.getElementById('talvezConheeco')
+  var post = document.getElementById('post')
+
+  /*
+  class Box extends React.Component {
+      render() {
+          return <div > < h1 > eae < /h1> </div >
       }
-      class Formulario extends React.Component {
-              render() {
-                  return ( < form > < input type = "text" / > < input type = "submit" / > < /form>)
-                  }
+  }
+  class Formulario extends React.Component {
+          render() {
+              return ( < form > < input type = "text" / > < input type = "submit" / > < /form>)
               }
-              ReactDOM.render( < div class = "umaclasse" > < Formulario / > < Box / > < Box / > < Box / > < /div>, container)
+          }*/
+  class LogoInput extends React.Component {
+      render() {
+          return <div class = "logoInput" >
+              <
+              img src = "https://www.flaticon.com/svg/static/icons/svg/145/145802.svg"
+          width = "45" / >
+              <
+              input type = "text"
+          placeholder = "Pesquisar no Facebook" / >
+              <
+              /div>
+      }
+  }
+  class Areas extends React.Component {
+      render() {
+          return <div class = "areas" >
+              <
+              ul >
+              <
+              li > < img src = "https://image.flaticon.com/icons/png/512/102/102061.png"
+          width = "40" / > < /li> <
+              li > < img src = "https://image.flaticon.com/icons/png/512/64/64508.png"
+          width = "40" / > < /li> <
+              li > < img src = "https://img.icons8.com/ios/452/tv-show.png"
+          width = "40" / > < /li> <
+              li > < img src = "https://image.flaticon.com/icons/png/512/74/74827.png"
+          width = "40" / > < /li> <
+              li > < img src = "https://image.flaticon.com/icons/png/512/181/181548.png"
+          width = "40" / > < /li> <
+              /ul> <
+              /div>
+      }
+  }
+  class Informacoes extends React.Component {
+      render() {
+          return <ul >
+              <
+              li > < div class = "img-nome" > < span > < img src = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUQEhIVEBUVFRUPFRAVDw8QDxAVFREWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGisdHR0tLSstLSsrLS0tLS0tLS0tLS0tLS0tLS0rLSstODAtLS0tLS0tLSstLy03LS4tLTcrLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQMEBQYCBwj/xABBEAABAwIEAwUFBQUGBwAAAAABAAIDBBEFEiExBkFREyJhcYEUMpGhsSNCUsHRB2JykvAWJFOi4fEVQ2NzgpPS/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAhEQEBAAIDAQEBAAMBAAAAAAAAAQIRAxIhMUETFFFhBP/aAAwDAQACEQMRAD8A9dQUJUiC4IXV0EINwi6CkSMt0XSJLoDq6Lri6LoN3dGZcXSXQWjl0oKbBXV0y0czJLri6UOQHYQuLroOQRUJUiAEIQgBCEIAQhCAEIQgBCEIAQhCAUpAUq5cgw4JslOApt4SpxzdJdImKyrZC0vkeI2j7ziAFJpF0LA4z+0Vjbtpo+0P+I+7Wejdz8lksQ4mrKjR0rrH7kYyN+Wp9Sq6/wCz09frcWghF5ZmR+BeM38u5VDUcfUjTZvaSeLWAD/MQvLmUErvuHzUmLBpDuEbkVOPKt7N+0SP/lwucOrnhv0ukP7Qhyh/z/6LHswZwVhRYPc6pd8VzhyaOPj8E27Lz72g9baqfDxpET3mEDqHa/AgKkiweLoCpMWBQndL+kP/AB61NJjtPJ7so8j3fqrIEcjfxGoWP/sZE8XZK5p+P5pkcO4jAbwTscB90m2bw1CuWVjcNVtwUuZYePjOWBwjrad0R27Qe6fHofQrV4diUU4zRPD/AAvqPRCbE5KuQukERCVIgghCEAIQhACEIQAlQhIwghF0l1NpuL6roriaQNBc4gAak30C8q4247dKTT0xLWbOkHvSeDTyH1TipNtFxNx5DT5o4rTSDTf7Np8Tzt4Lzypqqqufne4uHL7sbfIJMJwXNaSXbcN/VaIODdGgAKLnJ8dHHw79qDScPxt1eS8/AKyjZGwWa0DyCZLyUiyudrpx45EoShL2ijsToUbaadtcn4pE0xq7tZA0lNlT8UpVeJFJhcgaXtFKeqtIqs9bqmo3KfGQqmVjPPCWep83ZyjK9ocDuHAELKYnwZkJmoZTA/fs7kxO8PBaRreiejcQtpm5cuOT4y2B8XyMf7PWxljxpn5Hx8fRbWN4cAQbg6gjYqnxvBmVDNdHDVruYKzmFYw+jk7Ce+S+hOw8QrlZXGX43qFxFIHAOabgi4PVdqmQSJUiCCEIQAhCEAqEFIotVCJHutqlWa41x5tLCde8fdb1PJSrTIftJ4pJJpIj/wBwg7Dk39VlcCw7Mc7tuQVfTsdPLcnM5xzE+JNyVs4YgxoaOQTyuo348SJLoceZ0UKbE427d76LDVdm5InWQqKfHD90WUGXEJHcyn0L+kal0w6hNe1Dr81lg956/FPwkjW6fQf1aiOqtzSmsuqJtQpFPJdTY0mW1sZ+aRmJEJaWHNopEmD6ZtkjdxcRZdwVIj4qj5krNVjA3cqpkkarkjHKvQo+KI+TlYUfFjLgOFx1Xl8UrenzVpQyNvsT5ap60zvr2Kiro5RdjgfC+qq+J8CbUx6aPF8p6/unwWcwtkZsWSGJ3R12g/FaOkrJWd2TX97r6quzG8Wvij4Mxl0TzSTXFjZpPLwW8BWN4swMyt9oh0kb3iBu4DmPFTOFcd7SMCQ94d09b9VcrLPFpkISq2QTc8wY1zzs0Fx8gLldlR3nkls9KT+29L1f/K3/AOkLv+z1N/hfNCO0GmgSIukLllThqolygleHcdYuZ6lwvdrO4PE8yvSOPsbNPAcvvO7o8Lrx7DqYzShvU5nHw5lXjGkjQcM0eVnaEau0HgFOr65se+p6LuomEbQ1vSwHQKjezMczj4kqa3x8N1FTJKd7DomfZhzKdlnAGmg5dSqmqrHbDRGhasbxt6LkTB3u/RUwufFXWFw5W3O5RoSmnuKBIpEouVy2FJUcteptFe4TLIVOpo7Ka1xi6oX2Wnw8h4yuWTpyr3DZrELNt+K/iThxw78feb05hYmogLTqLL26EhzddVTYpw7HJcgWJVY1hk8lljuNFGjcWncjyJW3xHhlzNW6jpzVNJRC9nN+S02jrV3wnLJIwlktnDulkjRJE7zB1C0WG1EoJGTug2dHfOweMbtwPArG4W7stG6A+K2/DlW0aE77qaeqv6GW40+B3VHi+H+zyiqjHcJ+0YNm/vDwWiY1u40UgsDhYgEHQg7FVGOZvDasPbob2+XgpiylGPZKnIT9nJ3Wnw5DzG3lZasFaSufLHQTMzeaeQQnYmVESp3s0KNKdJqodponAVDxOoEcbnnkP9lCpHln7TqpznsYToLmyhcPUnZxGU7v+TeSiY3mqK0sJvYhluTQNT+at659gGDYCy1/GuEQZ35jcqDMS85W7D5qXIOS5ADRooaq8U9jrqmH0NzqrFyRGy6o0VK1vJPrrKu2RpWr6uAy6fZCnGxp0BTtcxNtiTzAkATgUWrkPxFWlI/ZVUamQPU6aRscNn0VgCszh9QrynlunKzzxS5IGuGqoMRwxl7Ob5Hmr9jkVMIe2yr8ZY5auqwtbguXVuo8ktDdpCvnuLDlOyZlo2nvNU7bdVpQVdwFbQvWapxbRXNDJp5K5XPy4Fx7D+2iLRo4d5h6OH6rvh6uMsTS73h3XDxGhUy6po/sKlw2ZN3x0Dx7w9VpK5rPGhQkabi66WjCxzZC6QgGGbDyCz3G8+Sme/8AD3vUbfNX0Lu6PIfRZj9og/ucnkPqFlPraPNuGGZpJJTqdr+LjcqwqNSmuG47Qnxd+QUiRuqeVdGERC1NPClvCZLVHZtpGyLoMT+VKGpbVIabGnWtXYYlsptVpzZKhCQ06aF2AuAnGhCo7YE/GUyE40oNZUkuqvqOZZiByuaKRSLGlgN0+ColA66myMWmPxx8nlVWLwXF1UU8xBV7XnurNOf3lOU06eL2LqIAqZTtsVUUc1lfU9iEYp5ZpLjOigY9DmiJ5s749N/kpsaWRtwQeYIWziv05h8odG1w5gfRSFQ8LSkdpCfuOsPK6v1rGGc9IhKhCVfRvuwfBZ3jtualkH7pPwIKk8H4iJqWN99SwA/xNGV3zCa4jZmiceQa6/iCNVjHRPrB4AfsyOjvyCfnGqgcOSe+zxBH0VhOE8nRgjlq5LE4UixbuMiAxOIRtRLLly7XJCDNlASPKRjkgdaE60LhrU6EwVF0FJdASIirOjkVRGVOpnqV/jXYU7UK6cFnsHfsraaqAV4uPlx3TdbDdrh4LD5yHlp5Gy2sdaHaArE4lpO+34ksm/BKsoXrRYY64WUp3rTYU/RGFVzTxatQ4rlr0gK1cOlPgb7VkzRsQT9FqVkeHe9WSu5AH5kD8lrlpj8c/JPQhCFTN5D+yzFbCSmcf+qz6PH0KvuNcUENK883/ZtHmvKMIxF1PMyZu7Dcj8Q2cPUXV5x1jYnMTWG7bGT47fJZadCLgFTllHRwy/otPOF5/TzWIPRbfD6sSxg89j5p1phfSIXTguSsbHXKRCEKVhI5LdckoNHmKIEk6IXJhNCUvUSWewVbPidiqkTaujMkzqlixIHmpjKkFGi7LFr1KpZVUNmU6g7zgFFi9tnhr7NzE2HVZXifigud2UPWxcCreujc+Ps2G3LRUcfDLmau36c0y6xacM1DrFzjsLqNUPzPLupurCioyG5B6lMV9NlICmtJqFoxqFq8PbYLN4Yy5WnphoqjPkqUzRN1UuVjndAU4SqLiStszswd91e3Lo5wtM1gklcfeJboCSbdAPNaPD8QZMHFl7A5TcEG/ksJhlW9jBGwAEk3da7yXHl0WzwWmEbCBzedeuUBpPxBV4Z7umfNxXHGZX9WdkJLpFptzafLa5JT9RA5p7wtfXwPWyZKhtStKuMExDI7XY7qkuu43oErfucDqFxmVDhWJ2GRx05HoroOupsdGGRzMi6bulus7G+OTolcFBQpW4e1MOFlJK5LU4FdNKqmeK6uaqNVrwtIwz8Ro4bKbE6ybCC5NntMZUKfR4iW6D4qjzqTROudUtLmTd4VWH81K9ozuWXpao+63yVvTyW0U1pMmoo2CyYxKAHZRIao2tdWFKcwUn2M4bS2V5G2wTVPFZPSusE2eV24nlygkrGVUnbS29TrYWVpj+JD3WqipXhl3Pc1pJvqdfgn7oYzd1vTQ0kI7UAAfZNBNtnP5D+Ygei1jBkYG9ABfr1K84ZxOIr9mM7ic2Z21+Rtz3KrK7iSeY96Q26Duj4BacXFZPXP/wCvmmWWpdyePVfax+IfEIXjntR6n4oWvRy9oerpaKrbZ16aTcStYct/32Xy+ossbW02Rxbdr7bPaQ5rh1BV5i1IYZP3Xd5p5eI8tbjwIVTVxi+Yc9/NZ3y6rpk3NxVuFkAp6ZijIiL4lRyWV1h2JW0cdFnQU9HIg5dNq2UHVLnWao68t03CuIaoO2KmxvjntOzJMyY7RLmUWNpmeLlw6RNPk0UKWpR1O8kh2qlVc8ruSa6YeVcmmOeWyoK5aU72abPVNEp+kKdipWncp4CJvP5pKmFqfR1GU3/q6nMqrKnZVsGwTsdaCb9FFjXrpqqabu3PnZWmCTlzsvqegHRZCmrXG/itVgJyNvuTqUiaq4AWbxvHADlb5eZRiGMXBaPJY3EKrM42O2n6qsYi5aO1WIXuTqVUTVBO67dcqPNGV0YTTk5La5dIUjXplycpxdwC12x0mWPRCtf+HS/jHxQjZrGuwgTUMbgQS1mUut7paSGk+XunwXn7nWJY4WIu1zeYIXpWHYxHG0tyPII927HDa2+nLRYri3Dwf7xGCLaObuQ37rvTbyt0U58dynq+Pk63Sie1RZmJ6CW/dPofHp6/VdPaCufVjousohJQUPFiiPcX2vqr0zOten4ZrG4KuYK8NblaA23KwSSVmbQgH/xCfUuxqGv6qbHUAqmnh1u34JtkpCm4tJyL2d+iq3v1XPtKZfIl1Vc9n8y57RNRvT4IS0JXYY47aLoUr+q7ZLZOCoSbTRttC47uVjSYK06nVRYqkKfT1l/62Sq5cYknD2AdFENOBsnZaknZMdoSp9FyiXSPA8FajFCBYaaW3+ZVA0EalXXD+GOndmI7oNugJ/RPTK5FoaOWpf2cfm55vlb6ruv4Xni3jLx+NneHw3XpGGUbYWBrWgddNSqriniplI0tbZ8xGjL6N/ef0HhzV4scq849mPl5gg/Aro22KqqrFHyOLi4lziXOO1yVGdX20+K2mDG5RMrA29g4HwC5k+wBe0guGrBbd/3fQe96BQYJu9nOw28Su2TXdvoNd1ekWqvJJ+KT+d6VXHtp6BCeiXzHp0gEWOoOhHIg7hQI5OhupDX6X5deXxXT9YMdjND2Ehb9w95h8OnmP0TTH3F+fP8AX1WsxWjE8ZZ94d5h6O/Q7LEBxY7UbEgjbzC5OXj1dx08fIfnbzUdSxr9QeoUd7bFYxtlP1Kjk0B9D6J5kih04O1jY+BUhsZC0jLJMY66MgPJRw+yV1bbYKkFqqSwzN1tuPzUDOu31ZPMpgyqdLlOdou2TJkOHNOmnda41HUFKxcqQ2Zdtcq/MQu2zlTcVdk8FWdK8WtfldZ0TFTIMx8Euqpkui8bXSxPsdFWRQm+p+au8OqGR6kgc7myi+NMd36vMJwF0pDpLtbvl2J8Fu6KGOFlgAxoF+QAHmvP3cYsjHd7588rfiqDEeIpqjV5u3kwaRCx3I5+qUxtPPLHH/rdcTcbZGFtO4XOnanX/wBbef8AEdOl15nU1BeS9z731LjcucfzKjzz5jcku356b7+JTVr7ldOOMjlzy2ekfYX+ATMep/PouKh3RK24bYbnfy6K2Tt8lzYbbBPB9hb4+JUbKWi/M7LjMgk3tUKLnH9FCA1FLxB3GxyxRVDWjKHODmVDW8miZhDrDkDeylwYhTnUOnpyf4Khg9WljrehWUAVhgdWIZmPcxsjL2cxzQ5rmnQ6FYY8uUbXjjS09NG892qgNz990sLyfJ7B9VnOMMJYyUFs0b3OH2jWEnKRsb7G4+i74ukjiqJGQPD43WkbYDuB4zZD4i/wtzusy6Zbd7Z6z6yJTA1gt73ny8ke1FQ+1XDnJag3U01R6ps1B6qIXJLpltJ7S6R7UlO0m7unhfdJJfz5pGbK6DUrWp57ALeWoRsSOC4dEjXEbXCHi+2ngugRzSqnXtJ5gH0S+1j8A/r0TFl21oS0e6cFYOTAEGvd4BM72uFy5nojUHan/a3fiSZ77u/MpkR+P+qVsf8AsCjRdqfiaToBfzUrXTmRprqPQJuIGwtzv68tU41o2v15aehVSFs2XWOo/RJJLyH+qJoyOVr+NymbIIhOqdjJdzsBr6JlwXLpjayew7fIkzqPmSh6EpHqlTHaIQFw1OMQhcjrVVT7zvM/VRihC6Z8c+X0iRCFSSIQhBJ+G7P9E395CElnOfou5tnen0SoSNXropEIIq7ahCQK3ceabdukQkZ2DZ38P5rliEJwqsYfcPkfolj90+iEKoVMVHvHzP1SN2d5D6oQgI8iZchCA4KEITSEIQgP/9k="
+          width = "50" / > Matheus < /span></div > < /li> <
+              li > < div class = "circulo" > < img src = "https://img.icons8.com/ios/452/plus-math.png"
+          width = "40" / > < /div></li >
+              <
+              li > < div class = "circulo" > < img src = "https://image.flaticon.com/icons/png/512/87/87401.png"
+          width = "40" / > < /div></li >
+              <
+              li > < div class = "circulo" > < img src = "https://image.flaticon.com/icons/png/512/54/54633.png"
+          width = "40" / > < /div></li >
+              <
+              li > < div class = "circulo" > < img src = "https://image.flaticon.com/icons/png/512/58/58979.png"
+          width = "40" / > < /div></li >
+              <
+              /ul>
+      }
+  }
+  ReactDOM.render( < div class = "container" > < LogoInput / > < Areas / > < Informacoes / > < /div>, header)
